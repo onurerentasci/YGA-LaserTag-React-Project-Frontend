@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  margin: 30px 0 70px 0;
+}
+
+.pc-grid-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  margin: 30px 0 70px 0;
+}
+
+.grid {
+  box-shadow: 0 2px 20px;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+}
+
+.grid:hover {
+  transform: scale(1.01);
+  transition: transform 200ms ease-in-out;
+}
+
+.grid-image {
+  object-fit: cover;
+}

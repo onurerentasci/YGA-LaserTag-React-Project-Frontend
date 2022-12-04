@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#access {
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.row ul {
+  padding-left: 0;
+}
+
+.footer-container li:hover {
+  transform: scale(1.01);
+}
+
+.nav-item svg:hover {
+  transform: scale(1.5);
+  transition: transform 200ms ease-in-out;
+}

@@ -1,10 +1,16 @@
 * {
   box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 body {
   margin: 0;
   background-color: rgb(68, 68, 68);
+  background-image: url("D:/MyCode/proje/public/Imgs/bg2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -18,7 +24,11 @@ body {
 }
 
 .nav {
-  height: 100px;
+  height: 90px;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  position: fixed;
   background-color: #333;
   color: white;
   display: flex;
@@ -26,9 +36,6 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-radius: 0px 0px 0px 120px;
 }
 
 .nav ul {
@@ -60,19 +67,98 @@ nav li {
 
 .nav li:hover {
   background-color: #555;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in-out;
 }
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* 
+.home-title h1 {
+  background-color: #000;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+} */
 
 .title-logo {
   width: 90px;
   margin-left: 20px;
 }
 
-h1 {
+.home-title h1 {
+  text-align: center;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  margin-top: 120px;
+}
+
+h4 {
+  text-align: center;
   color: #fff;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
 }
 
-h4 {
+.services-title h1 {
+  text-align: center;
   color: #fff;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  margin-top: 120px;
+  font-size: 40px;
+}
+
+.services-title h3 {
+  text-align: center;
+  padding-bottom: 12px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.services-title h5 {
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#lasertag-title {
+  margin-top: 60px;
+  font-size: 30px;
+  padding-bottom: 12px;
+}
+
+.service-lasertag {
+  display: flex;
+  justify-content: center;
+  padding: 30px 80px 60px 80px;
+}
+
+.service-lasertag img {
+  width: 800px;
+  align-items: center;
+  justify-items: center;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+
+.service-lasertag div {
+  color: #fff;
+  font-size: 20px;
+  margin: 50px 40px 50px 40px;
+}
+
+.line {
+  text-align: center !important;
+  box-sizing: border-box;
+  border-radius: 40px;
+  content: "";
+  display: block;
+  width: 700px;
+  height: 4px;
+  background: #fff;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }

@@ -10,7 +10,7 @@ export default function Navbar() {
       </Link>
       <ul>
         <CustomLink to="/about">Hakkımızda</CustomLink>
-        <CustomLink to="/pricing">Fiyatlandırma</CustomLink>
+        <CustomLink to="/services">Hizmetlerimiz</CustomLink>
         <CustomLink className="reservation" to="/reservation">
           Online Randevu
         </CustomLink>
@@ -19,7 +19,7 @@ export default function Navbar() {
   );
 }
 
-function CustomLink({ to, children, ...props }) {
+export function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
   return (
