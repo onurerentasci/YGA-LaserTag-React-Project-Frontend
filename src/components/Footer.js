@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import title from "D:/MyCode/proje/src/components/images/title.png";
+import title from "D:/MyCode/proje/src/components/images/logo1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "D:/MyCode/proje/src/style/Footer.css";
 import { CustomLink } from "./Navbar";
@@ -62,7 +62,7 @@ const Footer = () => {
           <div className="col-md-3 col-sm-6 col-12 me-4">
             <h3 className="d-flex justify-content-start">Hızlı Erisim</h3>
             <ul className="border-top border-end border-3">
-              <li className="mt-3 mb-3">
+              <li className="mt-3 mb-3 ms-4">
                 <CustomLink
                   className="text-decoration-none text-white"
                   to="/about"
@@ -70,7 +70,7 @@ const Footer = () => {
                   Hakkımızda
                 </CustomLink>
               </li>
-              <li className="mb-3">
+              <li className="mb-3 ms-4">
                 <CustomLink
                   className="text-decoration-none text-white"
                   to="/services"
@@ -78,7 +78,7 @@ const Footer = () => {
                   Hizmetlerimiz
                 </CustomLink>
               </li>
-              <li className="mb-3">
+              <li className="mb-3 ms-4">
                 <CustomLink
                   className="text-decoration-none text-white"
                   to="/reservation"
