@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import title from "D:/MyCode/proje/src/components/images/logo1.png";
+import title from "../components/images/logo1.png";
 
 export default function Navbar() {
   return (

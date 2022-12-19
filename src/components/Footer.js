@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import title from "D:/MyCode/proje/src/components/images/logo1.png";
+import title from "../components/images/logo1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "D:/MyCode/proje/src/style/Footer.css";
+import "../style/Footer.css";
 import { CustomLink } from "./Navbar";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Instagram, Twitter, YouTube } from "@mui/icons-material";
