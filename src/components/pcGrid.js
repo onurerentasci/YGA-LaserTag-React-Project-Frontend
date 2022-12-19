@@ -1,8 +1,8 @@
 import React from "react";
-import "D:/MyCode/proje/src/style/Card.css";
+import "../style/Card.css";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
-import "D:/MyCode/proje/src/style/Grid.css";
+import "../style/Grid.css";
 
 function PcGridComponent({ img }) {
   return (

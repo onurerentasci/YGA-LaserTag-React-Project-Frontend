@@ -1,7 +1,7 @@
 import React from "react";
 import GridComponent from "../components/Grid";
 import PcGridComponent from "../components/pcGrid";
-import "D:/MyCode/proje/src/style/Styles.css";
+import "../style/Styles.css";
 
 export default function Services() {
   return (

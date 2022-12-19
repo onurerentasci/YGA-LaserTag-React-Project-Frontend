@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "../components/slider/Slider";
 import CardComponent from "../components/Card";
-import "D:/MyCode/proje/src/style/Card.css";
+import "../style/Card.css";
 import ref from "../components/Navbar"
 
 export default function Home() {
