@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "D:/MyCode/proje/src/style/Slider.css";
+import "../../style/Slider.css";
 import dataSlider from "./DataSlider";
 import BtnSlider from "./BtnSlider";
 
@@ -43,6 +43,7 @@ export default function Slider() {
               src={
                 process.env.PUBLIC_URL + `/Imgs/SliderImgs/img${index + 1}.jpg`
               }
+              alt={""}
             />
           </div>
         );

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import title from "D:/MyCode/proje/src/components/images/logo1.png";
+import title from "../components/images/logo1.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "D:/MyCode/proje/src/style/Footer.css";
+import "../style/Footer.css";
 import { CustomLink } from "./Navbar";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Instagram, Twitter, YouTube } from "@mui/icons-material";
@@ -20,7 +20,7 @@ const Footer = () => {
               to="/"
               className="col-12 col-md3 d-flex align-items-center justify-content-center"
             >
-              <img src={title} className="mx-2" width={150} />
+              <img src={title} className="mx-2" width={150} alt="" />
             </Link>
             <div className="mt-20 d-flex justify-content-between">
               <p>
