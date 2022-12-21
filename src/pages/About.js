@@ -1,6 +1,6 @@
 import React from "react";
 import GMap from "../components/GMap";
-import "D:/MyCode/proje/src/style/Styles.css";
+import "../style/Styles.css";
 
 export default function About() {
   

@@ -1,7 +1,7 @@
 import React from "react";
 import GridComponent from "../components/Grid";
 import PcGridComponent from "../components/pcGrid";
-import "D:/MyCode/proje/src/style/Styles.css";
+import "../style/Styles.css";
 
 export default function Services() {
   return (
@@ -13,7 +13,7 @@ export default function Services() {
           <h5>Suit Up! It's Laser Tag Time!</h5>
           <div className="line"></div>
           <div className="service-lasertag">
-            <img src="/Imgs/SliderImgs/img1.jpg"></img>
+            <img src="/Imgs/SliderImgs/img1.jpg" alt=""></img>
             <div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

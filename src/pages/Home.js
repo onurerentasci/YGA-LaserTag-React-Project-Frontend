@@ -1,15 +1,15 @@
 import React from "react";
 import Slider from "../components/slider/Slider";
 import CardComponent from "../components/Card";
-import "D:/MyCode/proje/src/style/Card.css";
-import ref from "../components/Navbar"
+import "../style/Card.css";
+import ref from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
       <div className="home-title">
         <h1 ref={ref}>Laser Tag Samsun</h1>
-        <h4>Oyun ve Eğlence Merkezi</h4>
+        <h4>Oyun ve Eglence Merkezi</h4>
       </div>
       <Slider />
       <div className="card-container">
