@@ -198,15 +198,51 @@ h4 {
   margin: auto;
   padding-top: 40px;
   margin-top: 20px;
+  border: solid 9px #555;
   margin-bottom: 40px;
   border-radius: 45px;
   width: 80%;
   height: 800px;
   background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
   box-shadow: 20px;
-  opacity: 60%;
+  opacity: 100%;
 }
 
-.button-group {
+.c1 {
   margin-left: 50px;
+  margin-right: 50px;
+}
+
+.c1 label {
+  margin-right: 15px;
+  margin-bottom: 30px;
+}
+
+.c2 {
+  margin-right: 50px;
+}
+
+.telefon {
+  margin-bottom: 60px;
+}
+
+.login {
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 120px;
+  display: grid;
+  justify-content: center;
+}
+
+.login h3 {
+  margin-left: 20px;
+}
+
+.login button {
+  width: 252.925px;
+  margin-left: 8px;
+}
+
+.choice {
+  display: flex;
 }
