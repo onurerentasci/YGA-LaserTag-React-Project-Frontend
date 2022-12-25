@@ -196,30 +196,14 @@ h4 {
 
 .reservation-container {
   margin: auto;
-  padding-top: 40px;
   margin-top: 20px;
   border: solid 9px #555;
   margin-bottom: 40px;
   border-radius: 45px;
   width: 80%;
-  height: 800px;
   background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
   box-shadow: 20px;
   opacity: 100%;
-}
-
-.c1 {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.c1 label {
-  margin-right: 15px;
-  margin-bottom: 30px;
-}
-
-.c2 {
-  margin-right: 50px;
 }
 
 .telefon {
@@ -227,22 +211,95 @@ h4 {
 }
 
 .login {
-  margin-left: 50px;
-  margin-top: 10px;
-  margin-bottom: 120px;
-  display: grid;
-  justify-content: center;
+  padding-top: 33%;
+  padding-bottom: 33%;
 }
 
 .login h3 {
-  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .login button {
-  width: 252.925px;
-  margin-left: 8px;
+  margin-top: 15px;
+  width: 35ch;
 }
 
-.choice {
+.col-sm-6 h6 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.signup-container {
+  margin: auto;
+  padding-top: 80px;
+  margin-top: 20px;
+  border: solid 9px #555;
+  margin-bottom: 40px;
+  border-radius: 45px;
+  width: 35%;
+  height: 700px;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  box-shadow: 20px;
+  opacity: 100%;
+}
+
+.signup-container h3 {
+  margin-top: 16%;
+}
+
+.signup-container button {
+  width: 252.925px;
+}
+
+.time-grid label {
+  width: 170px;
+  height: 50px;
+}
+
+.time-grid div {
+  margin-bottom: 10px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.time-grid label {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #4d2ca6;
+  border: 1px solid #673FD7;
+}
+
+.submit-button {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.col-6 {
+  border-left: 7px #555;
+  border-left-style: solid;
+}
+
+
+.login li{
+  list-style: none;
+}
+
+.login a{
+  color: #a22683bd;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+  padding-top: 10px;
+  padding-right: 80px;
+  display: flex;
+  justify-content: end;
+}
+
+.login a:hover{
+  color: #262affa1;
 }
