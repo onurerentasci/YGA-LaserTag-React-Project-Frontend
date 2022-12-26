@@ -20,6 +20,10 @@
   transform: scale(1.01);
 }
 
+.footer-container a{
+  margin-bottom: 20px;
+}
+
 .nav-item svg:hover {
   transform: scale(1.5);
   transition: transform 200ms ease-in-out;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import title from "../components/images/logo1.png";
+import title from "../components/images/logo2.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/Footer.css";
 import { CustomLink } from "./Navbar";
