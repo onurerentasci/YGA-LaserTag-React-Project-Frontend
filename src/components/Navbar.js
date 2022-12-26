@@ -1,32 +1,25 @@
 import React from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import title from "../components/images/logo1.png";
 
 export default function Navbar() {
   return (
     <nav className="nav">
-      <Link to="/" className="site-title">
+      <a href="/" className="site-title">
         <img className="title-logo" src={title} alt="title" />
-      </Link>
+      </a>
       <ul>
-        <CustomLink to="/about">Hakkımızda</CustomLink>
-        <CustomLink to="/services">Hizmetlerimiz</CustomLink>
-        <CustomLink className="reservation" to="/reservation">
-          Online Randevu
-        </CustomLink>
+        <li>
+          <a href="/about">Hakkımızda</a>
+        </li>
+        <li>
+          <a href="/services">Hizmetlerimiz</a>
+        </li>
+        <li>
+          <a className="reservation" href="/reservation">
+            Online Randevu
+          </a>
+        </li>
       </ul>
     </nav>
-  );
-}
-
-export function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-  return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </li>
   );
 }

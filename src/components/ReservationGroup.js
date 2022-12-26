@@ -6,7 +6,6 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import { CustomLink } from "./Navbar";
 import SignUp from "../pages/SignUp";
 import TimeGrid from "./TimeGrid";
 
@@ -92,9 +91,9 @@ export default function ReservationGroup() {
               <button type="button" className="btn btn-outline-secondary">
                 Giriş Yap
               </button>
-              <CustomLink to={"/signup"} element={<SignUp />}>
+              <a href={"/signup"} element={<SignUp />}>
                 Üye Değil Misin? Kayıt Ol!
-              </CustomLink>
+              </a>
             </Box>
           </div>
         </div>
