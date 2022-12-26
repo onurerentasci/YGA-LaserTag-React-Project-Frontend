@@ -13,8 +13,8 @@ import TimeGrid from "./TimeGrid";
 export default function ReservationGroup() {
   return (
     <div className="reservation-container">
-      <div class="row g-0 text-center">
-        <div class="col-sm-6 col-md-8 ">
+      <div className="row g-0 text-center">
+        <div className="col-sm-6 col-md-8 ">
           <h6>Almak istediginiz hizmeti seçiniz!</h6>
           <FormControl>
             <RadioGroup
@@ -46,7 +46,7 @@ export default function ReservationGroup() {
             <div className="telefon">
               <h6>Telefon numaranızı yazınız</h6>
               <TextField
-                id="outlined-mail-input"
+                id="outlined-number-input"
                 label="Telefon Numarası"
                 placeholder="53xxxxxxxx"
               />
@@ -58,13 +58,14 @@ export default function ReservationGroup() {
           </div>
           <div>
             <div className="submit-button">
-            <button class="button-36" role="button">Rezervasyon</button>
-
+              <button className="button-36" role="button">
+                Rezervasyon
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="col-6 col-md-4">
+        <div className="col-6 col-md-4">
           <div className="login">
             <h3>Giris Yap!</h3>
             <Box
@@ -88,7 +89,7 @@ export default function ReservationGroup() {
                   autoComplete="current-password"
                 />
               </div>
-              <button type="button" class="btn btn-outline-secondary">
+              <button type="button" className="btn btn-outline-secondary">
                 Giriş Yap
               </button>
               <CustomLink to={"/signup"} element={<SignUp />}>

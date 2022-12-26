@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 export default function SignUpComponent() {
   return (
     <div className="signup-container">
-      <div class="row g-0 text-center">
+      <div className="row g-0 text-center">
         <h3>Kayıt Ol!</h3>
         <Box
           component="form"
@@ -32,7 +32,7 @@ export default function SignUpComponent() {
             <div />
             <div>
               <TextField
-                id="outlined-mail-input"
+                id="outlined-mail-input-signup"
                 label="E-Posta"
                 type="email"
                 color="secondary"
@@ -46,15 +46,8 @@ export default function SignUpComponent() {
                 autoComplete="current-password"
               />
             </div>
-            <div>
-              <TextField
-                id="outlined-date-input"
-                type="date"
-                color="secondary"
-              />
-            </div>
           </div>
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" className="btn btn-outline-secondary">
             Kayıt Ol
           </button>
         </Box>
