@@ -7,7 +7,7 @@
 body {
   margin: 0;
   background-color: rgb(68, 68, 68);
-  background-image: url("D:/MyCode/proje/public/Imgs/bg2.jpg");
+  background-image: url("../../public/Imgs/bg2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -256,7 +256,7 @@ h4 {
   font-weight: bold;
   color: #ffffff;
   background-color: #4d2ca6;
-  border: 1px solid #673FD7;
+  border: 1px solid #673fd7;
 }
 
 .submit-button {
@@ -283,19 +283,19 @@ h4 {
   width: 35ch;
 }
 
-.login li{
+.login li {
   list-style: none;
   margin-top: 15px;
 }
 
-.login a{
+.login a {
   color: #a22683bd;
   font-weight: 600;
   text-decoration: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-  "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+    "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
 }
 
-.login a:hover{
+.login a:hover {
   color: #262affa1;
 }
