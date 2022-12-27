@@ -238,7 +238,7 @@ h4 {
 }
 
 .time-grid label {
-  width: 170px;
+  width: 125px;
   height: 50px;
 }
 
@@ -270,8 +270,8 @@ h4 {
 }
 
 .login {
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 33%;
+  padding-bottom: 33%;
 }
 
 .login h3 {
@@ -280,7 +280,8 @@ h4 {
 
 .login button {
   margin-top: 15px;
-  width: 35ch;
+  margin-bottom: 5px;
+  width: 29ch;
 }
 
 .login li {
@@ -289,6 +290,7 @@ h4 {
 }
 
 .login a {
+  
   color: #a22683bd;
   font-weight: 600;
   text-decoration: none;

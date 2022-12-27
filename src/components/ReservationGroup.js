@@ -70,7 +70,7 @@ export default function ReservationGroup() {
             <Box
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "35ch" },
+                "& .MuiTextField-root": { m: 1, width: "29ch"},
               }}
               noValidate
               autoComplete="off"
@@ -88,12 +88,16 @@ export default function ReservationGroup() {
                   autoComplete="current-password"
                 />
               </div>
-              <button type="button" className="btn btn-outline-secondary">
-                Giriş Yap
-              </button>
-              <a href={"/signup"} element={<SignUp />}>
-                Üye Değil Misin? Kayıt Ol!
-              </a>
+              <div>
+                <button type="button" className="btn btn-outline-secondary">
+                  Giriş Yap
+                </button>
+              </div>
+              <div>
+                <a href={"/signup"} element={<SignUp />}>
+                  Üye Değil Misin? Kayıt Ol!
+                </a>
+              </div>
             </Box>
           </div>
         </div>
