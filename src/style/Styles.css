@@ -23,6 +23,10 @@ body {
   margin-left: 50px;
 }
 
+.reservation-container .row {
+  height: 670px;
+}
+
 .nav {
   height: 90px;
   width: 100%;
@@ -206,7 +210,10 @@ h4 {
   opacity: 100%;
 }
 
-.telefon {
+.phoneNumber {
+  margin: auto;
+  width: 29vh;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -217,25 +224,48 @@ h4 {
 
 .signup-container {
   margin: auto;
-  padding-top: 60px;
-  margin-top: 20px;
   border: solid 9px #555;
   margin-bottom: 40px;
   border-radius: 45px;
-  width: 35%;
+  width: 30%;
   height: 700px;
   background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
   box-shadow: 20px;
   opacity: 100%;
 }
 
-.signup-container h3 {
-  margin-top: 16%;
+.login {
+  height: 575px;
+  display: grid;
+  justify-content: center;
+  padding-top: 20%;
 }
 
-.signup-container button {
-  width: 252.925px;
+.form form {
+  width: 34vh;
+  padding-top: 15px;
 }
+
+.form input {
+  height: 6vh;
+  border: solid 1px #333;
+}
+
+.form button {
+  background-color: #262affa1;
+  color: #fff;
+  border: solid 2px;
+  border-radius: 20px;
+  height: 5vh;
+}
+
+.form button:hover {
+  background-color: rgb(172, 65, 225);
+  transition: ease-in-out;
+  transition-duration: .3s;
+  scale: 1.008;
+}
+
 
 .time-grid label {
   width: 125px;
@@ -259,23 +289,14 @@ h4 {
   border: 1px solid #673fd7;
 }
 
-.submit-button {
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
 .col-6 {
   border-left: 7px #555;
   border-left-style: solid;
 }
 
-.login {
-  padding-top: 33%;
-  padding-bottom: 33%;
-}
-
 .login h3 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  vertical-align: bottom;
 }
 
 .login button {
@@ -299,4 +320,16 @@ h4 {
 
 .login a:hover {
   color: #262affa1;
+}
+
+
+.choice label{
+  padding: 5px 15px 5px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;;
+}
+
+.choice input{
+  scale: 1.5;
+  margin: 0px 8px 0px 0px
 }
