@@ -51,6 +51,42 @@ export default function ReservationGroup() {
               />
             </div>
           </Box>
+          <div>
+            <FormControl>
+            <h6>Gün seçiniz</h6>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group-date"
+              >
+                <FormControlLabel
+                  value="pazartesi"
+                  control={<Radio />}
+                  label="Pazartesi"
+                />
+                <FormControlLabel
+                  value="sali"
+                  control={<Radio />}
+                  label="Salı"
+                />
+                <FormControlLabel value="carsamba" control={<Radio />} label="Çarşamba" />
+                <FormControlLabel
+                  value="persembe"
+                  control={<Radio />}
+                  label="Perşembe"
+                />
+                <FormControlLabel
+                  value="cuma"
+                  control={<Radio />}
+                  label="Cuma"
+                /><FormControlLabel
+                  value="cumartesi"
+                  control={<Radio />}
+                  label="Cumartesi"
+                />
+              </RadioGroup>
+            </FormControl>
+          </div>
           <h6>Saatler</h6>
           <div className="time-grid">
             <TimeGrid />
@@ -70,7 +106,7 @@ export default function ReservationGroup() {
             <Box
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "29ch"},
+                "& .MuiTextField-root": { m: 1, width: "29ch" },
               }}
               noValidate
               autoComplete="off"
