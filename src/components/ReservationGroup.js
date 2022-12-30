@@ -1,20 +1,20 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import SignUp from "../pages/SignUp";
-import TimeGrid from "./TimeGrid";
 import axios from "axios";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 
 const schema = Yup.object().shape({
-  email: Yup.string()
+  phoneNumber: Yup.string().required(
+    "Telefon alanının doldurulması zorunludur"
+  ),
+});
+
+const schema2 = Yup.object().shape({
+  eMail: Yup.string()
     .required("E-Posta alanının doldurulması zorunludur")
-    .email("Invalid email format"),
-  password: Yup.string()
-    .required("Parola alanının doldurulması zorunludur")
-    .min(8, "Parolanız en az 8 karakterden oluşmak zorundadır!"),
+    .email("E-Mail formatı geçerli değil"),
 });
 
 export default function ReservationGroup() {
@@ -22,57 +22,32 @@ export default function ReservationGroup() {
     <div className="reservation-container">
       <div className="row g-0 text-center">
         <div className="col-sm-6 col-md-8 ">
-          <h6>Almak istediginiz hizmeti seçiniz!</h6>
-          <Formik
-            initialValues={{
-              picked: "",
-            }}
-            onSubmit={async (values) => {
-              await new Promise((r) => setTimeout(r, 500));
-              alert(JSON.stringify(values, null, 2));
-            }}
-          >
-            {({ values }) => (
-              <Form>
-                <div
-                  className="choice"
-                  role="group"
-                  aria-labelledby="my-radio-group"
-                >
-                  <label>
-                    <Field type="radio" name="choice" value="LaserTag" />
-                    LaserTag
-                  </label>
-                  <label>
-                    <Field type="radio" name="choice" value="Playstation" />
-                    PlayStation
-                  </label>
-                  <label>
-                    <Field type="radio" name="choice" value="PC" />
-                    PC
-                  </label>
-                </div>
-              </Form>
-            )}
-          </Formik>
           <Formik
             validationSchema={schema}
-            initialValues={{ phoneNumber: "" }}
+            initialValues={{
+              service: "",
+              phoneNumber: "",
+              date: "",
+              period: "",
+            }}
             onSubmit={(values) => {
               const data = {
+                service: values.service,
                 phoneNumber: values.phoneNumber,
+                date: values.date,
+                period: values.period,
               };
 
               const url = "https://localhost:7184/api/user";
               axios
                 .post(url, data)
                 .then((result) => {
-                  alert(JSON.stringify(result.data));
+                  console.log(JSON.stringify(result.data)); {/*alert(JSON.stringify(result.data));*/}
                 })
                 .catch((error) => {
                   alert(error);
                 });
-              alert(JSON.stringify(values));
+              console.log(JSON.stringify(values)); {/*alert(JSON.stringify(values));*/}
             }}
           >
             {({
@@ -83,96 +58,141 @@ export default function ReservationGroup() {
               handleBlur,
               handleSubmit,
             }) => (
-              <div className="phoneNumber">
-                <h6>Telefon Numaranızı Yazınız</h6>
+              <div className="reservation-form">
                 <form noValidate onSubmit={handleSubmit}>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.phoneNumber}
-                    placeholder="05xxxxxxxxx"
-                    className="form-control inp_text"
-                    id="phoneNumber"
-                  />
-                  <p className="error">
-                    {errors.phoneNumber &&
-                      touched.phoneNumber &&
-                      errors.phoneNumber}
-                  </p>
-                </form>
-              </div>
-            )}
-          </Formik>
-          <div>
-            <Formik
-              initialValues={{
-                picked: "",
-              }}
-              onSubmit={async (values) => {
-                await new Promise((r) => setTimeout(r, 500));
-                alert(JSON.stringify(values, null, 2));
-              }}
-            >
-              {({ values }) => (
-                <Form>
-                  <h6>Gün seçiniz</h6>
                   <div
                     className="choice"
                     role="group"
                     aria-labelledby="my-radio-group"
                   >
+                    <h6>Almak istediginiz hizmeti seçiniz!</h6>
                     <label>
-                      <Field type="radio" name="period" value="Pazartesi" />
+                      <Field type="radio" name="service" value={"laserTag"} />
+                      LaserTag
+                    </label>
+                    <label>
+                      <Field type="radio" name="service" value={"playstation"} />
+                      Playstation
+                    </label>
+                    <label>
+                      <Field type="radio" name="service" value={"pc"} />
+                      PC
+                    </label>
+                  </div>
+                  <div className="phoneNumber">
+                    <h6>Telefon Numaranızı Yazınız</h6>
+                    <input
+                      type="tel"
+                      maxLength={11}
+                      name="phoneNumber"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.phoneNumber}
+                      placeholder="05xxxxxxxxx"
+                      className="form-control inp_text"
+                      id="phoneNumber"
+                    />
+                  </div>
+                  <p className="error">
+                    {errors.phoneNumber &&
+                      touched.phoneNumber &&
+                      errors.phoneNumber}
+                  </p>
+                  <div
+                    className="choice"
+                    role="group"
+                    aria-labelledby="my-radio-group"
+                  >
+                    <h6>Gün Seçiniz</h6>
+                    <label>
+                      <Field type="radio" name="date" value={"pazartesi"} />
                       Pazartesi
                     </label>
                     <label>
-                      <Field type="radio" name="period" value="Sali" />
+                      <Field type="radio" name="date" value={"sali"} />
                       Salı
                     </label>
                     <label>
-                      <Field type="radio" name="period" value="Carsamba" />
+                      <Field type="radio" name="date" value={"carsamba"} />
                       Çarşamba
                     </label>
                     <label>
-                      <Field type="radio" name="period" value="Persembe" />
+                      <Field type="radio" name="date" value={"persembe"} />
                       Perşembe
                     </label>
                     <label>
-                      <Field type="radio" name="period" value="Cuma" />
+                      <Field type="radio" name="date" value={"cuma"} />
                       Cuma
                     </label>
                     <label>
-                      <Field type="radio" name="period" value="Cumartesi" />
+                      <Field type="radio" name="date" value={"cumartesi"} />
                       Cumartesi
                     </label>
                   </div>
-                </Form>
-              )}
-            </Formik>
-          </div>
-          <h6>Saatler</h6>
-          <div className="time-grid">
-            <TimeGrid />
-          </div>
-          <div>
-            <div className="submit-button">
-              <button type="submit" className="button-36" role="button">
-                Rezervasyon
-              </button>
-            </div>
-          </div>
+                  <div
+                    className="choice"
+                    role="group"
+                    aria-labelledby="my-radio-group"
+                  >
+                    <h6>Lütfen Saat Seçiniz</h6>
+                    <div>
+                      <label>
+                        <Field type="radio" name="period" value={"period1"} />
+                        10.00-11.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period2"} />
+                        11.00-12.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period3"} />
+                        12.00-13.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period4"} />
+                        13.00-14.00
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        <Field type="radio" name="period" value={"period5"} />
+                        14.00-15.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period6"} />
+                        15.00-16.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period7"} />
+                        16.00-17.00
+                      </label>
+                      <label>
+                        <Field type="radio" name="period" value={"period8"} />
+                        17.00-18.00
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="submit-button">
+                    <button type="submit" className="button-36">
+                      Rezervasyon
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+          </Formik>
         </div>
 
         <div className="col-6 col-md-4">
+          {/* login */}
           <Formik
-            validationSchema={schema}
-            initialValues={{ email: "", password: "" }}
+            validationSchema={schema2}
+            initialValues={{ eMail: "", password: "" }}
             onSubmit={(values) => {
               const data = {
-                Name: values.email,
-                Fiyat: values.password,
+                eMail: values.eMail,
+                password: values.password,
               };
 
               const url = "https://localhost:7184/api/user";
@@ -201,16 +221,16 @@ export default function ReservationGroup() {
                   <form noValidate onSubmit={handleSubmit}>
                     <input
                       type="email"
-                      name="email"
+                      name="eMail"
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
                       placeholder="E-Posta"
                       className="form-control inp_text"
-                      id="email"
+                      id="eMail"
                     />
                     <p className="error">
-                      {errors.email && touched.email && errors.email}
+                      {errors.eMail && touched.eMail && errors.eMail}
                     </p>
                     <input
                       type="password"

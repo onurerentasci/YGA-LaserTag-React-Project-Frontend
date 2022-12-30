@@ -1,40 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+import ReservationGroup from "./ReservationGroup";
+
 const schema = Yup.object().shape({
   firstName: Yup.string().required("İsim alanının doldurulması zorunludur"),
   lastName: Yup.string().required("Soyisim alanının doldurulması zorunludur"),
+  phoneNumber: Yup.string()
+    .required("Telefon alanının doldurulması zorunludur")
+    .min(11, "0 ile başlayan geçerli bir numara giriniz"),
   eMail: Yup.string()
     .required("E-Posta alanının doldurulması zorunludur")
-    .email("Invalid email format"),
+    .email("E-Mail formatı geçerli değil"),
   password: Yup.string()
     .required("Parola alanının doldurulması zorunludur")
     .min(8, "Parolanız en az 8 karakterden oluşmak zorundadır!"),
 });
 
 export default function SignUpComponent() {
-  const [value, setValue] = useState({
-    firstName: "",
-    lastName: "",
-    eMail: "",
-  });
-
-  useEffect(() => {
-    console.log(value.firstName);
-    console.log(value.lastName);
-    console.log(value.eMail);
-  });
-
-  function handleChange(e) {
-    setValue({
-      ...value,
-      [e.target.name]: e.target.value,
-    });
-  }
-
+  const navigate = useNavigate();
   return (
     <div className="signup-container">
       <div className="row g-0 text-center">
@@ -44,15 +32,19 @@ export default function SignUpComponent() {
             firstName: "",
             lastName: "",
             email: "",
+            phoneNumber: "",
             password: "",
           }}
           onSubmit={(values) => {
             const data = {
               firstName: values.firstName,
-              lastName : value.lastName,
-              eMail: value.eMail,
-              password: value.password
+              lastName: values.lastName,
+              eMail: values.eMail,
+              phoneNumber: values.phoneNumber,
+              password: values.password,
             };
+          
+            navigate("/reservation");
 
             const url = "https://localhost:7184/api/user";
             axios
@@ -78,8 +70,8 @@ export default function SignUpComponent() {
               <h3>Kayıt Ol!</h3>
               <div className="form">
                 <form noValidate onSubmit={handleSubmit}>
-                {/* input ad */}
-                <input
+                  {/* input ad */}
+                  <input
                     type="firstName"
                     name="firstName"
                     onChange={handleChange}
@@ -105,6 +97,22 @@ export default function SignUpComponent() {
                   />
                   <p className="error">
                     {errors.lastName && touched.lastName && errors.lastName}
+                  </p>
+                  <input
+                    type="tel"
+                    maxLength={11}
+                    name="phoneNumber"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.phoneNumber}
+                    placeholder="05xxxxxxxxx"
+                    className="form-control inp_text"
+                    id="phoneNumber"
+                  />
+                  <p className="error">
+                    {errors.phoneNumber &&
+                      touched.phoneNumber &&
+                      errors.phoneNumber}
                   </p>
                   <input
                     type="eMail"

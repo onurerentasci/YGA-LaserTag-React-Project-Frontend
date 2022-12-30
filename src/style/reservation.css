@@ -86,6 +86,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-top: 20px;
 }
 
 .button-36:hover {

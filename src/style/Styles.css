@@ -218,7 +218,7 @@ h4 {
 }
 
 .col-sm-6 h6 {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 15px;
 }
 
@@ -238,11 +238,11 @@ h4 {
   height: 575px;
   display: grid;
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 15%;
 }
 
 .form form {
-  width: 34vh;
+  width: 42vh;
   padding-top: 15px;
 }
 
@@ -262,31 +262,16 @@ h4 {
 .form button:hover {
   background-color: rgb(172, 65, 225);
   transition: ease-in-out;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   scale: 1.008;
 }
 
-
-.time-grid label {
-  width: 125px;
-  height: 50px;
+.reservation-form {
+  width: 100%;
 }
 
-.time-grid div {
-  margin-bottom: 10px;
-  padding-left: 70px;
-  padding-right: 70px;
-}
-
-.time-grid label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #4d2ca6;
-  border: 1px solid #673fd7;
+.phoneNumber{
+  width: 30vh;
 }
 
 .col-6 {
@@ -302,7 +287,7 @@ h4 {
 .login button {
   margin-top: 15px;
   margin-bottom: 5px;
-  width: 29ch;
+  width: 22ch;
 }
 
 .login li {
@@ -322,14 +307,27 @@ h4 {
   color: #262affa1;
 }
 
-
-.choice label{
-  padding: 5px 15px 5px 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;;
+.choice{
+  margin-top: 40px;
 }
 
-.choice input{
-  scale: 1.5;
-  margin: 0px 8px 0px 0px
+.choice label {
+  padding: 5px 15px 5px 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.choice input {
+  scale: 2;
+  margin: 0px 12px 0px 0px;
+  vertical-align: middle;
+}
+
+.col-sm-6 {
+  display: grid;
+  justify-content: center;
+}
+
+.submit-button{
+  margin-top: 60px;
 }
