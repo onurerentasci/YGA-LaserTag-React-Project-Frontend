@@ -12,7 +12,6 @@ const schema = Yup.object().shape({
   ),
 });
 
-
 export default function ReservationGroup() {
   return (
     <div className="reservation-container">
@@ -38,12 +37,11 @@ export default function ReservationGroup() {
               axios
                 .post(url, data)
                 .then((result) => {
-                  console.log(JSON.stringify(result.data)); {/*alert(JSON.stringify(result.data));*/}
+                  JSON.stringify(result.data);
                 })
                 .catch((error) => {
                   alert(error);
                 });
-              console.log(JSON.stringify(values)); {/*alert(JSON.stringify(values));*/}
             }}
           >
             {({
@@ -63,15 +61,15 @@ export default function ReservationGroup() {
                   >
                     <h6>Almak istediginiz hizmeti seçiniz!</h6>
                     <label>
-                      <Field type="radio" name="service" value={"laserTag"} />
+                      <Field type="radio" name="service" value={"3"} />
                       LaserTag
                     </label>
                     <label>
-                      <Field type="radio" name="service" value={"playstation"} />
+                      <Field type="radio" name="service" value={"2"} />
                       Playstation
                     </label>
                     <label>
-                      <Field type="radio" name="service" value={"pc"} />
+                      <Field type="radio" name="service" value={"1"} />
                       PC
                     </label>
                   </div>
@@ -101,27 +99,27 @@ export default function ReservationGroup() {
                   >
                     <h6>Gün Seçiniz</h6>
                     <label>
-                      <Field type="radio" name="date" value={"pazartesi"} />
+                      <Field type="radio" name="date" value={"1"} />
                       Pazartesi
                     </label>
                     <label>
-                      <Field type="radio" name="date" value={"sali"} />
+                      <Field type="radio" name="date" value={"2"} />
                       Salı
                     </label>
                     <label>
-                      <Field type="radio" name="date" value={"carsamba"} />
+                      <Field type="radio" name="date" value={"3"} />
                       Çarşamba
                     </label>
                     <label>
-                      <Field type="radio" name="date" value={"persembe"} />
+                      <Field type="radio" name="date" value={"4"} />
                       Perşembe
                     </label>
                     <label>
-                      <Field type="radio" name="date" value={"cuma"} />
+                      <Field type="radio" name="date" value={"5"} />
                       Cuma
                     </label>
                     <label>
-                      <Field type="radio" name="date" value={"cumartesi"} />
+                      <Field type="radio" name="date" value={"6"} />
                       Cumartesi
                     </label>
                   </div>
@@ -133,40 +131,47 @@ export default function ReservationGroup() {
                     <h6>Lütfen Saat Seçiniz</h6>
                     <div>
                       <label>
-                        <Field type="radio" name="period" value={"period1"} />
+                        <Field
+                          type="radio"
+                          name="period"
+                          value={"10"}
+                          status={true}
+                        />
                         10.00-11.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period2"} />
+                        <Field type="radio" name="period" value={"11"} />
                         11.00-12.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period3"} />
+                        <Field type="radio" name="period" value={"12"} />
                         12.00-13.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period4"} />
+                        <Field type="radio" name="period" value={"13"} />
                         13.00-14.00
                       </label>
                     </div>
                     <div>
                       <label>
-                        <Field type="radio" name="period" value={"period5"} />
+                        <Field type="radio" name="period" value={"14"} />
                         14.00-15.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period6"} />
+                        <Field type="radio" name="period" value={"15"} />
                         15.00-16.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period7"} />
+                        <Field type="radio" name="period" value={"16"} />
                         16.00-17.00
                       </label>
                       <label>
-                        <Field type="radio" name="period" value={"period8"} />
+                        <Field type="radio" name="period" value={"17"} />
                         17.00-18.00
                       </label>
                     </div>
+
+                    <h5>{} saatleri haricinde tercih yapınız!</h5>
                   </div>
 
                   <div className="submit-button">
@@ -182,7 +187,11 @@ export default function ReservationGroup() {
 
         <div className="col-6 col-md-4">
           {/* login */}
-          {localStorage.getItem("access") == 1 ? <AvatarComp/> : <LoginComp/>}
+          {localStorage.getItem("access") === 1 ? (
+            <AvatarComp />
+          ) : (
+            <LoginComp />
+          )}
         </div>
       </div>
     </div>

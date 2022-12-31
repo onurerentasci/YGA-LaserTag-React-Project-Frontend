@@ -3,7 +3,6 @@ import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import SignUp from "../pages/SignUp";
-import AvatarComp from "./AvatarComp";
 
 const schema2 = Yup.object().shape({
   eMail: Yup.string()

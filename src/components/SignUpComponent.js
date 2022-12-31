@@ -21,12 +21,6 @@ const schema = Yup.object().shape({
 
 export default function SignUpComponent() {
   const navigate = useNavigate();
-  const isLoggedIn = () => {
-    if (axios.result == true) {
-      navigate("/reservation");
-    } else {
-    }
-  };
   return (
     <div className="signup-container">
       <div className="row g-0 text-center">
@@ -53,6 +47,7 @@ export default function SignUpComponent() {
               .post(url, data)
               .then((result) => {
                 alert(JSON.stringify(result.data));
+                navigate("/reservation")
               })
               .catch((error) => {
                 alert(error);
@@ -141,7 +136,7 @@ export default function SignUpComponent() {
                   <p className="error">
                     {errors.password && touched.password && errors.password}
                   </p>
-                  <button id="signup" type="submit" onClick={isLoggedIn}>
+                  <button id="signup" type="submit">
                     KAYDOL
                   </button>
                 </form>
