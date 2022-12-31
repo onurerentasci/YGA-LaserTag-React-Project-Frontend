@@ -5,8 +5,6 @@ import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-import ReservationGroup from "./ReservationGroup";
-
 const schema = Yup.object().shape({
   firstName: Yup.string().required("İsim alanının doldurulması zorunludur"),
   lastName: Yup.string().required("Soyisim alanının doldurulması zorunludur"),
@@ -23,6 +21,12 @@ const schema = Yup.object().shape({
 
 export default function SignUpComponent() {
   const navigate = useNavigate();
+  const isLoggedIn = () => {
+    if (axios.result == true) {
+      navigate("/reservation");
+    } else {
+    }
+  };
   return (
     <div className="signup-container">
       <div className="row g-0 text-center">
@@ -43,8 +47,6 @@ export default function SignUpComponent() {
               phoneNumber: values.phoneNumber,
               password: values.password,
             };
-          
-            navigate("/reservation");
 
             const url = "https://localhost:7184/api/user";
             axios
@@ -139,7 +141,9 @@ export default function SignUpComponent() {
                   <p className="error">
                     {errors.password && touched.password && errors.password}
                   </p>
-                  <button type="submit">KAYDOL</button>
+                  <button id="signup" type="submit" onClick={isLoggedIn}>
+                    KAYDOL
+                  </button>
                 </form>
               </div>
             </div>

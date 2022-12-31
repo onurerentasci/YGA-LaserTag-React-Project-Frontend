@@ -332,33 +332,32 @@ h4 {
   margin-top: 60px;
 }
 
-.avatar{
+.avatar {
   height: 100%;
 }
 
-.avatar .MuiAvatar-root{
+.avatar .MuiAvatar-root {
   height: 150px;
   width: 150px;
   margin-left: 30px;
   margin-right: 30px;
 }
 
-.avatar .MuiAvatar-root svg{
+.avatar .MuiAvatar-root svg {
   height: 100px;
   width: 100px;
 }
 
-.avatar-container{
-  padding-top: 25vh;
-  display: grid;
+.avatar-container {
+  display: flex;
   justify-content: center;
-  width: 100%;
+  padding-top: 40%;
 }
 
-.avatar svg{
+.avatar svg {
   height: 20px;
 }
 
-.avatar h2{
+.avatar h2 {
   margin-top: 30px;
 }

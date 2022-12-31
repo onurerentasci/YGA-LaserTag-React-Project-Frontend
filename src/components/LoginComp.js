@@ -3,7 +3,7 @@ import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import SignUp from "../pages/SignUp";
-
+import AvatarComp from "./AvatarComp";
 
 const schema2 = Yup.object().shape({
   eMail: Yup.string()
@@ -28,6 +28,7 @@ export default function LoginComp() {
             .post(url, data)
             .then((result) => {
               alert(JSON.stringify(result.data));
+              <AvatarComp />;
             })
             .catch((error) => {
               alert(error);

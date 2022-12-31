@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
-import LoginComp from "./LoginComp";
 import AvatarComp from "./AvatarComp";
+import LoginComp from "./LoginComp";
 
 const schema = Yup.object().shape({
   phoneNumber: Yup.string().required(
@@ -182,8 +182,7 @@ export default function ReservationGroup() {
 
         <div className="col-6 col-md-4">
           {/* login */}
-          {/* <LoginComp/> */}
-          <AvatarComp/>
+          <LoginComp/>
         </div>
       </div>
     </div>
