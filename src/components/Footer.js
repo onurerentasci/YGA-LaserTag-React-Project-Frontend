@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import title from "../components/images/logo1.png";
+import title from "../components/images/logo2.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/Footer.css";
-import { CustomLink } from "./Navbar";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Instagram, Twitter, YouTube } from "@mui/icons-material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -20,23 +19,21 @@ const Footer = () => {
               to="/"
               className="col-12 col-md3 d-flex align-items-center justify-content-center"
             >
-              <img src={title} className="mx-2" width={150} />
+              <img src={title} className="mx-2" width={150} alt="" />
             </Link>
-            <div className="mt-20 d-flex justify-content-between">
-              <p>
+            <div className="mt-2 mb-1 d-flex justify-content-between">
+              <p  className="mb-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                orci libero, auctor nec mauris id, porttitor rhoncus elit.
-                Maecenas facilisis semper ligula, nec gravida velit interdum
-                efficitur... <br></br>
+                orci libero, auctor nec mauris id, porttitor rhoncus elit, phasellus elementum luctus tellus... <br></br>
                 <Link
-                  className="text-light text-decoration-none d-flex justify-content-start"
+                  className="mb-1 text-light text-decoration-none d-flex justify-content-start"
                   to="/about"
                 >
                   Devamını Oku...
                 </Link>
               </p>
             </div>
-            <ul className="d-flex justify-content-evenly mt-3 mb-3">
+            <ul className="d-flex justify-content-evenly mt-2 mb-3">
               <li className="nav-item">
                 <Link>
                   <FacebookIcon className="text-light text-decoration-none" />
@@ -63,28 +60,28 @@ const Footer = () => {
             <h3 className="d-flex justify-content-start">Hızlı Erisim</h3>
             <ul className="border-top border-end border-3">
               <li className="mt-3 mb-3 ms-4">
-                <CustomLink
+                <a
                   className="text-decoration-none text-white"
                   to="/about"
                 >
                   Hakkımızda
-                </CustomLink>
+                </a>
               </li>
               <li className="mb-3 ms-4">
-                <CustomLink
+                <a
                   className="text-decoration-none text-white"
                   to="/services"
                 >
                   Hizmetlerimiz
-                </CustomLink>
+                </a>
               </li>
               <li className="mb-3 ms-4">
-                <CustomLink
+                <a
                   className="text-decoration-none text-white"
                   to="/reservation"
                 >
                   Online Randevu
-                </CustomLink>
+                </a>
               </li>
             </ul>
           </div>

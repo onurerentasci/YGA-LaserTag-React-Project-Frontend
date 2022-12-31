@@ -43,6 +43,7 @@ export default function Slider() {
               src={
                 process.env.PUBLIC_URL + `/Imgs/SliderImgs/img${index + 1}.jpg`
               }
+              alt={""}
             />
           </div>
         );

@@ -1,11 +1,11 @@
 import React from "react";
-import "../style/Grid.css";
+import "../../src/style/Card.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import "../style/Grid.css";
+import "../../src/style/Grid.css";
 
 function GridComponent({ img, title, description }) {
   return (

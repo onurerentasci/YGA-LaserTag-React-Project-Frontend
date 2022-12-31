@@ -16,8 +16,16 @@
   padding-left: 0;
 }
 
+.footer-container .row{
+  width: 100%;
+}
+
 .footer-container li:hover {
   transform: scale(1.01);
+}
+
+.footer-container a{
+  margin-bottom: 20px;
 }
 
 .nav-item svg:hover {
