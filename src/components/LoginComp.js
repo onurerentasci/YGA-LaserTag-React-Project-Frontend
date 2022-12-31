@@ -28,7 +28,6 @@ export default function LoginComp() {
             .post(url, data)
             .then((result) => {
               alert(JSON.stringify(result.data));
-              <AvatarComp />;
             })
             .catch((error) => {
               alert(error);

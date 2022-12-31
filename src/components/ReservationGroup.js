@@ -182,7 +182,7 @@ export default function ReservationGroup() {
 
         <div className="col-6 col-md-4">
           {/* login */}
-          <LoginComp/>
+          {localStorage.getItem("access") == 1 ? <AvatarComp/> : <LoginComp/>}
         </div>
       </div>
     </div>
