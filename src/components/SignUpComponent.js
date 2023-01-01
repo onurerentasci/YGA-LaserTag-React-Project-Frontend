@@ -35,24 +35,23 @@ export default function SignUpComponent() {
           }}
           onSubmit={(values) => {
             const data = {
-              firstName: values.firstName,
-              lastName: values.lastName,
-              eMail: values.eMail,
-              phoneNumber: values.phoneNumber,
-              password: values.password,
+              Name: values.firstName,
+              Surname: values.lastName,
+              Email: values.eMail,
+              PhoneNumber: values.phoneNumber,
+              Password: values.password,
             };
 
-            const url = "https://localhost:7184/api/user";
+            const url = "https://localhost:7017/api/users/register";
             axios
               .post(url, data)
               .then((result) => {
                 alert(JSON.stringify(result.data));
-                navigate("/reservation")
+                navigate("/reservation");
               })
               .catch((error) => {
                 alert(error);
               });
-            alert(JSON.stringify(values));
           }}
         >
           {({

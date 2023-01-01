@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import AvatarComp from "./AvatarComp";
 import LoginComp from "./LoginComp";
+import Table from 'react-bootstrap/Table';
+
 
 const schema = Yup.object().shape({
   phoneNumber: Yup.string().required(
@@ -13,6 +15,8 @@ const schema = Yup.object().shape({
 });
 
 export default function ReservationGroup() {
+
+
   return (
     <div className="reservation-container">
       <div className="row g-0 text-center">
@@ -27,17 +31,17 @@ export default function ReservationGroup() {
             }}
             onSubmit={(values) => {
               const data = {
-                service: values.service,
-                phoneNumber: values.phoneNumber,
-                date: values.date,
-                period: values.period,
+                Service: values.service,
+                PhoneNumber: values.phoneNumber,
+                Day: values.date,
+                Clock: values.period,
               };
 
-              const url = "https://localhost:7184/api/user";
+              const url = "https://localhost:7017/api/users/reservation";
               axios
                 .post(url, data)
                 .then((result) => {
-                  JSON.stringify(result.data);
+                  alert(JSON.stringify(result.data));
                 })
                 .catch((error) => {
                   alert(error);
@@ -131,12 +135,7 @@ export default function ReservationGroup() {
                     <h6>Lütfen Saat Seçiniz</h6>
                     <div>
                       <label>
-                        <Field
-                          type="radio"
-                          name="period"
-                          value={"10"}
-                          status={true}
-                        />
+                        <Field type="radio" name="period" value={"10"} />
                         10.00-11.00
                       </label>
                       <label>
@@ -170,14 +169,27 @@ export default function ReservationGroup() {
                         17.00-18.00
                       </label>
                     </div>
-
-                    <h5>{} saatleri haricinde tercih yapınız!</h5>
                   </div>
 
                   <div className="submit-button">
-                    <button type="submit" className="button-36">
-                      Rezervasyon
-                    </button>
+                    {localStorage.getItem("access") == 1 ? (
+                      <button
+                        type="submit"
+                        id="rezButton"
+                        className="button-36"
+                      >
+                        Rezervasyon
+                      </button>
+                    ) : (
+                      <button
+                        type="submit"
+                        id="rezButton"
+                        className="button-36"
+                        disabled
+                      >
+                        Rezervasyon için giriş yap
+                      </button>
+                    )}
                   </div>
                 </form>
               </div>
@@ -186,12 +198,7 @@ export default function ReservationGroup() {
         </div>
 
         <div className="col-6 col-md-4">
-          {/* login */}
-          {localStorage.getItem("access") === 1 ? (
-            <AvatarComp />
-          ) : (
-            <LoginComp />
-          )}
+          {localStorage.getItem("access") == 1 ? <AvatarComp /> : <LoginComp />}
         </div>
       </div>
     </div>

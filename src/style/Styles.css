@@ -323,21 +323,13 @@ h4 {
   vertical-align: middle;
 }
 
-.choice h5{
-  margin-top: 20px;
-  padding: 5px;
-  background-color: #333;
-  color: royalblue;
-  text-shadow: 2px ;
-}
-
 .col-sm-6 {
   display: grid;
   justify-content: center;
 }
 
 .submit-button {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .avatar {

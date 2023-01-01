@@ -3,6 +3,7 @@ import axios from "axios";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import SignUp from "../pages/SignUp";
+import AvatarComp from "./AvatarComp";
 
 const schema2 = Yup.object().shape({
   eMail: Yup.string()
@@ -18,15 +19,18 @@ export default function LoginComp() {
         initialValues={{ eMail: "", password: "" }}
         onSubmit={(values) => {
           const data = {
-            eMail: values.eMail,
-            password: values.password,
+            Email: values.eMail,
+            Password: values.password,
           };
 
-          const url = "https://localhost:7184/api/user";
+          const url = "https://localhost:7017/api/users/loginuser";
           axios
             .post(url, data)
             .then((result) => {
               alert(JSON.stringify(result.data));
+              localStorage.setItem("email", values.eMail);
+              localStorage.setItem("password", values.password);
+              localStorage.setItem("access", 1);
             })
             .catch((error) => {
               alert(error);
@@ -71,7 +75,12 @@ export default function LoginComp() {
                 <p className="error">
                   {errors.password && touched.password && errors.password}
                 </p>
-                <button type="submit">Giriş Yap</button>
+                <button
+                  type="submit"
+                  onClick={() => window.location.reload(false)}
+                >
+                  Giriş Yap
+                </button>
               </form>
               <a href={"/signup"} element={<SignUp />}>
                 Üye Değil Misin? Kayıt Ol!
