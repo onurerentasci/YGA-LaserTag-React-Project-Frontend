@@ -169,6 +169,10 @@ export default function ReservationGroup() {
                         17.00-18.00
                       </label>
                     </div>
+                    <h6 className="warn">
+                      Yaptıgınız rezervasyonlar bulundugunuz hafta içinde
+                      geçerlidir!
+                    </h6>
                   </div>
 
                   <div className="submit-button">
@@ -177,6 +181,7 @@ export default function ReservationGroup() {
                         type="submit"
                         id="rezButton"
                         className="button-36"
+                        onClick={() => window.location.reload(false)}
                       >
                         Rezervasyon
                       </button>
@@ -186,8 +191,9 @@ export default function ReservationGroup() {
                         id="rezButton"
                         className="button-36"
                         disabled
+                        
                       >
-                        Rezervasyon için giriş yap
+                        Rezervasyon İçin Giriş Yap
                       </button>
                     )}
                   </div>

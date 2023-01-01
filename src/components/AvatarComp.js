@@ -10,7 +10,14 @@ import Table from 'react-bootstrap/Table';
 
 
 export default function AvatarComp() {
-  const [data, setdata] = useState([{}]);
+  const [data, setdata] = useState([]);
+  const current = new Date();
+  const date = current.getDay();
+  const hour = current.getHours();
+  if (date == 0 && hour ==12) {
+    axios
+      .get("https://localhost:7017/api/users/resclear")
+  }
   useEffect(() => {
     axios
       .get("https://localhost:7017/api/users/getreservations")
@@ -23,9 +30,8 @@ export default function AvatarComp() {
           <VideogameAssetIcon />
         </Avatar>
         <h2>Hosgeldiniz</h2>
-      </div>
       <div>
-        <strong>laser tag dolu günler</strong>
+        <strong>Dolu Günler</strong>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -37,13 +43,14 @@ export default function AvatarComp() {
           <tbody>
             {data.map((res) => (
               <tr>
-                <td>{res.service}</td>
-                <td>{res.day}</td>
-                <td>{res.clock}</td>
+                <td>{res.service == 1 ? "PC" : res.service == 2 ? "Playstation"  : "LaserTag"} </td>
+                <td>{res.day == 1 ? "Pazartesi" : res.day == 2 ? "Salı"  : res.day == 3 ? "Çarşamba" : res.day == 4 ? "Perşembe" : res.day == 5 ? "Cuma" : "Cumartesi"}</td>
+                <td>{res.clock == 10 ? "10.00 - 11.00" : res.clock == 11 ? "11.00 - 12.00" : res.clock == 12 ? "12.00 - 13.00" : res.clock == 13 ? "13.00 - 14.00" : res.clock == 14 ? "14.00 - 15.00" : res.clock == 15 ? "15.00 - 16.00" : "16.00 - 17.00"}</td>
               </tr>
             ))}
           </tbody>
         </Table>
+      </div>
       </div>
     </div>
   );
