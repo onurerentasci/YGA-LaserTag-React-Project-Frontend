@@ -329,7 +329,7 @@ h4 {
 }
 
 .submit-button {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .avatar {
@@ -339,8 +339,8 @@ h4 {
 .avatar .MuiAvatar-root {
   height: 150px;
   width: 150px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .avatar .MuiAvatar-root svg {
@@ -351,7 +351,7 @@ h4 {
 .avatar-container {
   display: flex;
   justify-content: center;
-  padding-top: 40%;
+  padding-top: 15%;
 }
 
 .avatar svg {
@@ -360,4 +360,19 @@ h4 {
 
 .avatar h2 {
   margin-top: 30px;
+}
+
+.service-table{
+  margin-top: 30px;
+}
+
+.service-table h6{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.warn{
+  background-color: rgb(164, 105, 219);
+  padding: 3px;
+
 }
