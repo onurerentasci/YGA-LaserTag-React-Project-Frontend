@@ -31,7 +31,7 @@ export default function AvatarComp() {
         </Avatar>
         <h2>Hosgeldiniz</h2>
       <div>
-        <strong>Dolu Günler</strong>
+      <h6>Daha önce rezervasyon yapılmış gün ve saatler</h6>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
