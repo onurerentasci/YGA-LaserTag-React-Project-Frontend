@@ -339,8 +339,8 @@ h4 {
 .avatar .MuiAvatar-root {
   height: 150px;
   width: 150px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 .avatar .MuiAvatar-root svg {
